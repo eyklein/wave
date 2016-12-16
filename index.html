@@ -6,11 +6,13 @@
     // if (/localhost/.exec(window.location)) {
     //   annyangScript.src = "//localhost:8443/dist/annyang.js"
     // } else {
-      annyangScript.src = "//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"
+      annyangScript.src = "js/annyang/annyang.js"
     //}
-    document.write(annyangScript.outerHTML)
+     document.write(annyangScript.outerHTML)
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
 
     <script src="/js/rita-full.js" type="text/javascript" charset="utf-8"></script>
 
@@ -19,13 +21,40 @@
     <script src="js/qlab.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/analysis.js" type="text/javascript" charset="utf-8"></script>
     <script src="main.js"></script>
-<link rel="stylesheet" href="css/main.min.css" />
+    <script src="js/myCharts.js"></script>
+    <link rel="stylesheet" href="css/myChars.css" />
+
+    <link rel="stylesheet" href="css/main.min.css" />
+  </head>
+  <body>
+    <div id="maindiv">1</div>
+    <div id="section_hello">2</div>
+
+
+    <div class="container">
+      <div class="heading-holder">
+        <h1>Searched Word Frquency</h1>          
+      </div>
+      <!-- ROW 1-->
+      
+      <div class="col-md-8">
+        
+        <canvas id="barChart"></canvas>
+        <!-- END BAR CHART SECTION --> 
+      </div>   
+      <div class="col-md-8">
+        
+        <h4 id="time"></h4>
+        <!-- END BAR CHART SECTION --> 
+      </div>    
+    </div> 
+
+
+
+
+
+
+
+  </body>
+  </html>
 </head>
-<body>
-  <div id="maindiv">1</div>
-  <div id="section_hello">2</div>
-  
-
-
-</body>
-</html>

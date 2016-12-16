@@ -38,8 +38,24 @@ var sendCue = function(_cueNum, _delay){
     audioBlock.setToBlock();
     setTimeout(function(){ socket.emit("message", "/cue/" + _cueNum + "/start"); }, _delay);
     //socket.emit("message", "/cue/" + _cueNum + "/start");
+}
+var sendCuePause = function(_cueNum, _delay){
+    audioBlock.setToBlock();
+    setTimeout(function(){ socket.emit("message", "/cue/" + _cueNum + "/pause"); }, _delay);
+    //socket.emit("message", "/cue/" + _cueNum + "/start");
+}
+
+var sendCue = function(_cueNum, _delay, _isBlockingEffective){
+    if(_isBlockingEffective && audioBlock){
+        audioBlock.setToBlock();
+    }
+    setTimeout(function(){ socket.emit("message", "/cue/" + _cueNum + "/start"); }, _delay);
     
 }
+
+socket.on('my other event', function (data) {
+    console.log(data);
+});
 
 
 // document.getElementById("red").addEventListener("click", function(){
